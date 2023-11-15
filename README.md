@@ -14,7 +14,7 @@
 
 ## **Table of content:**
 
-- [development-setup](#development-setup)
+- [My Store](./my-store/)
 
 ## Development Setup
 
