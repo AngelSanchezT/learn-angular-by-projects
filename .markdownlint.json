@@ -3,7 +3,9 @@
         "allowed_elements": [
             "details",
             "p",
-            "img"
+            "img",
+            "br",
+            "em"
         ]
     }
 }

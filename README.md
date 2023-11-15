@@ -1,10 +1,15 @@
 # learn-angular-by-projects
 
 ![GitHub top language](https://img.shields.io/github/languages/top/AngelSanchezT/learn-angular-by-projects)
+![LOGO-ANGULAR](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
 <p align="center">
     <img src="./assets/images/logos/angular_renaissance.png" alt="angular-logo"
         width="120px" height="120px"/>
+    <br>
+    <em>Angular is a development platform for building mobile and desktop web applications
+    <br> using TypeScript/JavaScript and other languages.</em>
+  <br>
 </p>
 
 ## Development Setup
@@ -37,7 +42,7 @@ ng serve
 Angular is cross-platform, fast, scalable, has incredible tooling, and is
 loved by millions.
 
-## TODO:
+## TODO
 
 - [ ] Task 1
 - [ ] Task 2
