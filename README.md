@@ -11,30 +11,31 @@
 
 ### Prerequisites
 
-- Install [Node.js] which includes [Node Package Manager][npm]
+- Install [Node.js](https://nodejs.org/en) which includes [Node Package Manager](https://docs.npmjs.com/getting-started)
 
 ### Setting Up a Project
 
 Install the Angular CLI globally:
 
-```
+```bash
 npm install -g @angular/cli
 ```
 
 Create workspace:
 
-```
+```bash
 ng new [PROJECT NAME]
 ```
 
 Run the application:
 
-```
+```bash
 cd [PROJECT NAME]
 ng serve
 ```
 
-Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.
+Angular is cross-platform, fast, scalable, has incredible tooling, and is
+loved by millions.
 
 ## TODO:
 
