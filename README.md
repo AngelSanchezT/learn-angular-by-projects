@@ -12,6 +12,10 @@
   <br>
 </p>
 
+## **Table of content:**
+
+- [development-setup](#development-setup)
+
 ## Development Setup
 
 ### Prerequisites
