@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'my-store';
@@ -27,6 +27,16 @@ export class AppComponent {
 
   increaseAge() {
     this.person.age += 1;
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+
+  changeName(event: Event) {
+    const element = event.target as HTMLInputElement;
+    this.person.name = element.value;
   }
 
 }
