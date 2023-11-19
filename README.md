@@ -15,6 +15,7 @@
 ## **Table of content:**
 
 - [My Store](./my-store/)
+- [TodoApp](./todoapp/)
 
 ## Development Setup
 
