@@ -11,6 +11,7 @@ import { Task } from './../../models/task.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
   tasks = signal<Task[]>([
     {
       id: Date.now(),
