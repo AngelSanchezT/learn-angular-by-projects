@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { Task } from './../../models/task.model';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -15,21 +16,31 @@ export class HomeComponent {
   tasks = signal<Task[]>([
     {
       id: Date.now(),
-      title: 'Crear Proyecto',
-      completed: false
+      title: 'Crear proyecto',
+      completed: true
     },
     {
       id: Date.now(),
-      title: 'Crear componentes',
+      title: 'Crear componenentes',
       completed: false
     }
-
   ]);
 
-  cahngeHandler(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const newTask = input.value;
-    this.addTask(newTask);
+  newTaskCtrl = new FormControl('', {
+    nonNullable: true,
+    validators: [
+      Validators.required,
+    ]
+  });
+
+  changeHandler() {
+    if (this.newTaskCtrl.valid) {
+      const value = this.newTaskCtrl.value.trim();
+      if (value !== '') {
+        this.addTask(value);
+        this.newTaskCtrl.setValue('');
+      }
+    }
   }
 
   addTask(title: string) {
@@ -37,26 +48,37 @@ export class HomeComponent {
       id: Date.now(),
       title,
       completed: false
-    };
-    this.tasks.update((tasks) => [...tasks, newTask]);
+    }
+    this.tasks.update(prevState => [...prevState, newTask]);
   }
 
   deleteTask(index: number) {
-    this.tasks.update((tasks) => tasks.filter((task, position) => position !== index));
+    this.tasks.mutate(state => {
+      state.splice(index, 1);
+    })
   }
 
   updateTask(index: number) {
-    this.tasks.update((tasks) => {
-      return tasks.map((task, position) => {
-        if(position === index) {
+    /*
+    this.tasks.update(prevState => {
+      return prevState.map((task, position) => {
+        if (position === index) {
           return {
             ...task,
             completed: !task.completed
           }
         }
         return task;
-      });
+      })
     });
-
+    */
+    this.tasks.mutate(state => {
+      const currentTask = state[index];
+      state[index] = {
+        ...currentTask,
+        completed: !currentTask.completed
+      }
+    })
   }
+
 }

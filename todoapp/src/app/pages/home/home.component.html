@@ -8,62 +8,58 @@
         placeholder="Type new todo"
         autofocus
         type="text"
-        (change)="cahngeHandler($event)"/>
+        [formControl]="newTaskCtrl"
+        (keydown.enter)="changeHandler()"
+      />
     </div>
   </header>
   <div class="container todoapp-wrapper">
     <!-- This section should be hidden by default and shown when there are todos -->
-    <pre>
-      <code>
-        {{ tasks() | json }}
-      </code>
-    </pre>
     <section class="main">
       <ul class="todo-list">
         <li *ngFor="let task of tasks(); index as i">
           <div class="view">
-            <input class="toggle" type="checkbox" [checked]="task.completed" (change)="updateTask(i)" />
+            <input (change)="updateTask(i)" class="toggle" type="checkbox" [checked]="task.completed" />
             <label>{{ task.title }}</label>
             <button class="destroy" (click)="deleteTask(i)"></button>
           </div>
           <input class="edit" value="Buy a unicorn" />
         </li>
         <!--
-          <li class="completed">
-            <div class="view">
-              <input class="toggle" type="checkbox" checked />
-              <label>Learn JavaScript</label>
-              <button class="destroy"></button>
-            </div>
-            <input class="edit" value="Learn JavaScript" />
-          </li>
-          <li>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Buy a unicorn</label>
-              <button class="destroy"></button>
-            </div>
-            <input class="edit" value="Buy a unicorn" />
-          </li>
-          <li class="editing">
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Make dishes</label>
-              <button class="destroy"></button>
-            </div>
-            <input class="edit" value="Make dishes" />
-          </li>
-          -->
+        <li class="completed">
+          <div class="view">
+            <input class="toggle" type="checkbox" checked />
+            <label>Learn JavaScript</label>
+            <button class="destroy"></button>
+          </div>
+          <input class="edit" value="Learn JavaScript" />
+        </li>
+        <li>
+          <div class="view">
+            <input class="toggle" type="checkbox" />
+            <label>Buy a unicorn</label>
+            <button class="destroy"></button>
+          </div>
+          <input class="edit" value="Buy a unicorn" />
+        </li>
+        <li class="editing">
+          <div class="view">
+            <input class="toggle" type="checkbox" />
+            <label>Make dishes</label>
+            <button class="destroy"></button>
+          </div>
+          <input class="edit" value="Make dishes" />
+        </li>
+      -->
       </ul>
     </section>
     <!-- This footer should be hidden by default and shown when there are todos -->
     <footer class="footer">
       <!-- This should be `0 items left` by default -->
-      <span class="todo-count"><strong>{{ tasks().length }}</strong>
-        <span *ngIf="tasks().length === 1"; else elseBlock> item</span>
+      <span class="todo-count">
+        <strong>{{tasks().length}}</strong>
+        <span *ngIf="tasks().length === 1; else elseBlock"> item</span>
         <ng-template #elseBlock> items</ng-template>
-
-        {{ tasks().length <= 1 ? 'item' : 'items'}}
       </span>
       <!-- Remove this if you don't implement routing -->
       <ul class="filters">
