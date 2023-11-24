@@ -99,4 +99,13 @@
   <p>
     <input type="text">
   </p>
+  <hr>
+  <h2>New For</h2>
+  <ul>
+    @for(task of tasks(); track task; let i = $index) {
+      <li>{{ i }} {{ task }}</li>
+    } @empty {
+      <li><strong>La Lista esta en vacio.</strong></li>
+    }
+  </ul>
 </div>
