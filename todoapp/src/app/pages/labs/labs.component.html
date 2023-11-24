@@ -77,6 +77,7 @@
   <input type="number" [formControl]="widthCtrl">
   <span class="box" [style.width.px]="widthCtrl.value"></span>
   <hr />
+  <h1>Class-binding</h1>
   <p>
     <input type="text" [formControl]="nameCtrl"> <br />
     <span class="message-error" [class.show]="nameCtrl.invalid && nameCtrl.touched">Nombre invalido</span>

@@ -73,9 +73,10 @@ export class HomeComponent {
   }
 
   deleteTask(index: number) {
-    this.tasks.mutate(state => {
-      state.splice(index, 1);
-    })
+    this.tasks.update(value => {
+      value.splice(index, 1);
+      return value;
+    });
   }
 
   updateTask(index: number) {
@@ -92,12 +93,13 @@ export class HomeComponent {
       })
     });
     */
-    this.tasks.mutate(state => {
-      const currentTask = state[index];
-      state[index] = {
+    this.tasks.update(value => {
+      const currentTask = value[index];
+      value[index] = {
         ...currentTask,
         completed: !currentTask.completed
       }
+      return value;
     })
   }
 
