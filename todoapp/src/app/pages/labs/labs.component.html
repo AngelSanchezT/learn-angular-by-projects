@@ -54,6 +54,7 @@
     Soy nicolas y soy menor de 18
   </ng-template>
   <hr />
+  <h1>ngSwitchCase</h1>
   <input type="text" [value]="person().name" (change)="changeName($event)">
   <div [ngSwitch]="person().name">
     <p *ngSwitchCase="'nicolas'">yo soy nicolas</p>
