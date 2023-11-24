@@ -104,6 +104,9 @@ export class HomeComponent {
   }
 
   updateTaskEditingMode(index: number) {
+
+    if (this.tasks()[index].completed) return;
+
     this.tasks.update(prevState => {
       return prevState.map((task, position) => {
         if (position === index) {
