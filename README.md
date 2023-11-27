@@ -16,6 +16,7 @@
 
 - [My Store](./my-store/)
 - [TodoApp](./todoapp/)
+- [Store](./store/)
 
 ## Development Setup
 
