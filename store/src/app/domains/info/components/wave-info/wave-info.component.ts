@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import WaveSurfer from 'wavesurfer.js';
@@ -14,14 +14,23 @@ export class WaveInfoComponent {
 
   @Input({required: true}) audioUrl!: string;
   @ViewChild('wave') container!: ElementRef;
+  private ws!: WaveSurfer;
+  isPlaying = signal(false);
 
   // Cuando los Hijos de este componentes son renderizados se ejecuta este evento
   // Utilizado para obtener el hijo wave para el reproductor de audio.
   ngAfterViewInit() {
-    WaveSurfer.create({
+    this.ws = WaveSurfer.create({
         url: this.audioUrl,
         container: this.container.nativeElement
     });
+
+    this.ws.on('play', () => this.isPlaying.set(true));
+    this.ws.on('pause', () => this.isPlaying.set(false));
+  }
+
+  playPause() {
+    this.ws.playPause();
   }
 
 }
