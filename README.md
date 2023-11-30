@@ -50,6 +50,8 @@ loved by millions.
 
 ## TODO
 
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
+- [ ] crear una tabla de proyectos donde este el nombres, link a la carpeta, dificultad.
+- [ ] en cada proyecto hacer una referencia en dónde se tomó el proyecto, al fin curso, instructor o personal.
+- [ ] crear una parte en el readme de paso a paso de crear un proyecto, adjuntar los datasheet, una parte de cursos, recursos útiles, programas a utilizar. 
+- [ ] en la página poder relacionar blogs que escriba sobre referencia a cursos, temas de interés con angular. 
+
