@@ -54,4 +54,4 @@ loved by millions.
 - [ ] en cada proyecto hacer una referencia en dónde se tomó el proyecto, al fin curso, instructor o personal.
 - [ ] crear una parte en el readme de paso a paso de crear un proyecto, adjuntar los datasheet, una parte de cursos, recursos útiles, programas a utilizar. 
 - [ ] en la página poder relacionar blogs que escriba sobre referencia a cursos, temas de interés con angular. 
-
+- [ ] en el proyecto de Store (E-commerce) utilizar la documentación para explicar como esta contruido la aplicación, que componentes, servicios. etc.
