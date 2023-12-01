@@ -55,3 +55,4 @@ loved by millions.
 - [ ] crear una parte en el readme de paso a paso de crear un proyecto, adjuntar los datasheet, una parte de cursos, recursos útiles, programas a utilizar. 
 - [ ] en la página poder relacionar blogs que escriba sobre referencia a cursos, temas de interés con angular. 
 - [ ] en el proyecto de Store (E-commerce) utilizar la documentación para explicar como esta contruido la aplicación, que componentes, servicios. etc.
+- [ ] en la documentación de cada proyecto adicionar varias imagenes y fragmento de codigo para explicar el proyecto.
