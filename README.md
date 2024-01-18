@@ -12,11 +12,13 @@
   <br>
 </p>
 
-## **Table of content:**
+## **Projects:**
 
-- [My Store](./my-store/)
-- [TodoApp](./todoapp/)
-- [ecommerce](./store/)
+| # |  Project  | Difficulty |
+|---|-----------|------------|
+| 1 | [My Store](./my-store/) | Easy |
+| 2 | [TodoApp](./todoapp/) | Easy |
+| 3 | [ecommerce](./store/) | Easy |
 
 ## Development Setup
 
